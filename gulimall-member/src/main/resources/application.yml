@@ -1,0 +1,28 @@
+server:
+  port: 8000
+spring:
+  datasource:
+    username: root
+    password: 1234
+    url: jdbc:mysql://192.168.200.134:3306/gulimall_ums?userUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: gulimall-member
+mybatis-plus:
+  configuration:
+    #\u6570\u636E\u5E93\u4E0B\u5212\u7EBF\u548C\u5B9E\u4F53\u7C7B\u9A7C\u5CF0\u7EDF\u4E00
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+    banner: false
+  #\u544A\u8BC9mp\uFF0Csql\u6620\u5C04\u6587\u4EF6\u7684\u4F4D\u7F6E\uFF0C\u9ED8\u8BA4\u503Cclasspath*:/mapper/**/*.xml\u3002
+  #  classpath\u8868\u793A\u53EA\u5F15\u7528\u73B0\u5728\u6A21\u5757\u7684\u7C7B\u8DEF\u5F84\u3002lasspath*\u8868\u793A\u4E0D\u6B62\u5F15\u7528\u73B0\u5728\u6A21\u5757\u7684\u7C7B\u8DEF\u5F84\uFF0C\u8FD8\u5305\u62EC\u4F9D\u8D56jar\u5305\u7684\u7C7B\u8DEF\u5F84
+  mapper-locations: classpath:/mapper/**/*.xml
+
+
