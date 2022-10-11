@@ -14,6 +14,16 @@ spring:
             - Path=/api/product/**  #http://localhost:88/api/product/category/list/tree转发http://localhost:10000/product/category/list/tree
           filters:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+#        oss等第三方模块路由
+        - id: third_party_route
+          uri: lb://gulimall-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+#            http://localhost:88/api/thirdparty/oss/policy--->http://localhost:30000/oss/policy
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
         # 人人管理，路径路由。路由id，自定义，只要唯一即可
         - id: admin_route
           # uri路由的目标地址。lb就是负载均衡，后面跟服务名称。

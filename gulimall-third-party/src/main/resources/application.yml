@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+#    alicloud:
+#      oss:
+#        endpoint: xx
+#        bucket: xx
+#      access-key: xx
+#      secret-key: xx
+  application:
+    name: gulimall-third-party
+server:
+  port: 30000
+logging:
+  level:
+    com.vince.gulimall: debug
+#  2021\u5E74nacos\u7684\u914D\u7F6E\u6587\u4EF6\u8FD9\u6837\u5199alibaba.cloud.access-key=   alibaba.cloud.secret-key=  alibaba.cloud.oss.endpoint=

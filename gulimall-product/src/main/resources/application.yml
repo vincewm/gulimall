@@ -17,7 +17,7 @@ mybatis-plus:
   configuration:
     #数据库下划线和实体类驼峰统一
     map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
       id-type: auto
